@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+:root {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+ 
+}
+
+.light-mode,
+.dark-mode {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.light-mode {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+.dark-mode {
+  background-color: #1A202C;
+  color: #FFFFFF;
+}
+
+select {
+  outline: none;
+}
+
