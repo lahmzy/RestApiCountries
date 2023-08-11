@@ -91,19 +91,19 @@ const Home = () => {
     <div className={` ${isDarkmode ? "" : "bg-neutral-300"} w-full px-4 py-6`}>
       <Searchbar />
 
-      {displayedCountries?.length && (
+      {dataToPaginate?.length ? (
         <div className="md:flex md:flex-col items-center">
-          {selectCountry && (
+          {searchCountry ? null: selectCountry &&(
             <h1 className="text-2xl self-start font-semibold pt-3">
-              {selectCountry} - {dataToPaginate.length}
+              {selectCountry} - {countryData.length}
             </h1>
           )}
           <div className="flex flex-wrap gap-4 py-6 justify-evenly">
-            {displayedCountries?.map((country, index) => (
+            {dataToPaginate?.map((country, index) => (
               <CountryCard key={index} country={country} />
             ))}
           </div>
-          {dataToPaginate.length < countryData.length && (
+          {searchCountry ? null :dataToPaginate.length < countryData.length && (
             <button
               className="bg-blue-500 w-full md:w-[200px] text-white px-4 py-2 rounded-md"
               onClick={handleLoadMore}
@@ -112,7 +112,7 @@ const Home = () => {
             </button>
           )}
         </div>
-      )}
+      ) : null}
     </div>
   );
 };

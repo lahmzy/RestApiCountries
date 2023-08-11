@@ -16,7 +16,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className="px-6 md:py-6 py-3 shadow-md flex justify-between items-center">
+    <header className="px-6 md:py-6 py-2 shadow-md flex justify-between items-center">
       <h1 className="text-xl text-blue-500 capitalize font-semibold md:text-2xl">
         Where in the world?
       </h1>
