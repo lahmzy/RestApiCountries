@@ -13,6 +13,37 @@ export const StateContext = ({ children }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [currentPageData, setCurrentPageData] = useState([]);
 
+  const fetchByRegion = async () => {
+    setIsLoading(true);
+
+    try {
+      const response = await fetch(
+        `https://restcountries.com/v3.1/region/${selectCountry}`
+      );
+      const data = await response.json();
+      setCountryData(data); // Update the countryData state with fetched data
+      setIsLoading(false);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      setIsLoading(false);
+    }
+  }
+
+  const fetchAllCountries = async () => {
+    setIsLoading(true);
+
+    try {
+      const response = await fetch("https://restcountries.com/v3.1/all");
+      const data = await response.json();
+      setCountryData(data); // Update the countryData state with fetched data
+      setIsLoading(false);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      setIsLoading(false);
+    }
+  };
+
+
   return (
     <Context.Provider
       value={{
@@ -29,7 +60,9 @@ export const StateContext = ({ children }) => {
         currentPage,
         setCurrentPage,
         currentPageData,
-        setCurrentPageData
+        setCurrentPageData,
+        fetchByRegion,
+        fetchAllCountries
       }}
     >
       {children}

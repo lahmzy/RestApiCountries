@@ -16,7 +16,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className="px-6 py-6 shadow-md flex justify-between items-center">
+    <header className="px-6 md:py-6 py-3 shadow-md flex justify-between items-center">
       <h1 className="text-xl text-blue-500 capitalize font-semibold md:text-2xl">
         Where in the world?
       </h1>
@@ -24,14 +24,14 @@ const Navbar = () => {
         {isDarkmode ? (
           <div className="flex items-center gap-2 cursor-pointer">
             <BsMoonFill className="text-indigo-600" fontSize={28} />
-            <span className="font-medium"> Dark mode</span>
+            <span className="font-medium">Dark mode</span>
           </div>
         ) : (
           <div className="flex items-center cursor-pointer gap-2">
             <BsSun className="text-yellow-500" fontSize={28}/> <span className="font-medium">Light Mode</span>
           </div>
         )}
-      </div>
+    </div>
     </header>
   );
 };
