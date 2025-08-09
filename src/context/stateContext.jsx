@@ -33,7 +33,7 @@ export const StateContext = ({ children }) => {
     setIsLoading(true);
 
     try {
-      const response = await fetch("https://restcountries.com/v3.1/all");
+      const response = await fetch("https://restcountries.com/v3.1/all?fields=name,flags,population,region,capital");
       const data = await response.json();
       setCountryData(data); // Update the countryData state with fetched data
       setIsLoading(false);
@@ -42,6 +42,8 @@ export const StateContext = ({ children }) => {
       setIsLoading(false);
     }
   };
+
+  console.log(countryData)
 
 
   return (

@@ -78,7 +78,7 @@ const Home = () => {
         ...countryData.slice(startIndex, finalIndex),
       ]);
     } else if (countryData) {
-      setDisplayedCountries(countryData.slice(0, countriesPerPage));
+      setDisplayedCountries(countryData?.slice(0, countriesPerPage));
     }
   }, [currentPage, countryData, countriesPerPage]);
 
